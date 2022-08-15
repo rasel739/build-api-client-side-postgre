@@ -23,11 +23,11 @@ const Routed = () => {
           }
         />
         <Route
-          path="/resetPassword/:token"
+          path="/resetPassword/:email/:token"
           element={<ResetPassword />}
         />
 
-        <Route path="/v1/:token/:email" element={<SocialLogin />} />
+        <Route path="/v1/:token" element={<SocialLogin />} />
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />

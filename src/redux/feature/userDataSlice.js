@@ -142,13 +142,14 @@ const createUserData = createSlice({
     });
 
     builder.addCase(userDeleteData.fulfilled, (state, action) => {
-      const result = state.userData.filter(
-        (user) => user.id !== action.payload
+    const result = state.userData.filter(
+        (user) => user.id !== action.payload.id
       );
       state.loading = false;
       state.error = null;
-      state.userData = result;
-       console.log(`${action.payload} ${result}`) 
+      
+     state.userData=result
+      
     });
 
     builder.addCase(userDeleteData.rejected, (state, action) => {

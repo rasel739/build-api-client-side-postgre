@@ -22,10 +22,11 @@ export const resetPassword = createAsyncThunk(
 export const resetPasswordConfirm = createAsyncThunk(
   "resetPassword/resetPasswordConfirm",
   async (resetPasswordConfirms) => {
-    const {  token, confirmPassword } = resetPasswordConfirms;
+    const { email,token, confirmPassword } = resetPasswordConfirms;
     const res = await axios.post(
-      `${baseUrl}/reset-password/${token}`,
+      `${baseUrl}/reset-password/${email}/${token}`,
       {
+       
         password: confirmPassword,
       }
     );

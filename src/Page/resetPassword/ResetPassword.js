@@ -16,7 +16,7 @@ const ResetPassword = () => {
   const dispatch = useDispatch();
   const [inputs, setInputs] = useState({});
 
-  const { token } = useParams();
+  const { email,token } = useParams();
   
   
  
@@ -29,6 +29,7 @@ const ResetPassword = () => {
     e.preventDefault();
     if (inputs.newPassword === inputs.confirmPassword) {
       const resetPasswordConfirms = {
+        email:email,
         token: token,
         confirmPassword: inputs.confirmPassword,
       };
